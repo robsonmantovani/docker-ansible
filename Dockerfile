@@ -14,4 +14,7 @@ RUN pip install --no-cache-dir \
         'ansible >=2.2,<2.3' \
         'pywinrm >=0.2.2'
 
+COPY install-ssh-key.sh /usr/local/bin/install-ssh-key
+COPY install-host-key.sh /usr/local/bin/install-host-key
+
 CMD ["ansible", "--version"]
