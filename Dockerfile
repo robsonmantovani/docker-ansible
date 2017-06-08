@@ -11,7 +11,7 @@ RUN apk add --no-cache \
         openssl-dev
 
 ARG ansible_version
-ENV ANSIBLE_VERSION ${ansible_version:-2.2.3.0}
+ENV ANSIBLE_VERSION ${ansible_version:-2.3.1.0}
 
 RUN pip install --no-cache-dir \
         "ansible == $ANSIBLE_VERSION" \
