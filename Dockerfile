@@ -6,6 +6,7 @@ RUN apk add --no-cache \
         git \
         gcc \
         libffi-dev \
+        make \
         musl-dev \
         openssh-client \
         openssl-dev
