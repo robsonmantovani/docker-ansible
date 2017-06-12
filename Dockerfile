@@ -15,7 +15,7 @@ ENV ANSIBLE_VERSION ${ansible_version:-2.3.1.0}
 
 RUN pip install --no-cache-dir \
         "ansible == $ANSIBLE_VERSION" \
-        'pywinrm >= 0.2.2'
+        'pywinrm >= 0.2.2, < 0.3'
 
 COPY install-ssh-key.sh /usr/local/bin/install-ssh-key
 COPY install-host-key.sh /usr/local/bin/install-host-key
