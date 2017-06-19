@@ -49,7 +49,7 @@ build_images()
 main()
 {
     if [[ "$1" == "--clean-before" ]] ; then
-        run_cmd docker image rm $( docker image ls | egrep "^$DockerRepo" | awk '{ print $1":"$2 }' | sort ) || true
+        run_cmd docker rmi $( docker image ls | egrep "^$DockerRepo" | awk '{ print $1":"$2 }' | sort ) || true
     fi
 
     pull_base_image

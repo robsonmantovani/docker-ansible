@@ -8,7 +8,7 @@ services:
 script:
   - ./build.sh
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-  - docker image push flaudisio/ansible
+  - docker push flaudisio/ansible
 
 notifications:
   email:
