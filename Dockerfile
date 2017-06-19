@@ -2,13 +2,14 @@ FROM python:2.7-alpine
 
 LABEL maintainer "flaudisio@gmail.com"
 
+RUN apk add --no-cache \
+        git \
+        openssh-client
+
 ARG ansible_version
 ENV ANSIBLE_VERSION ${ansible_version:-2.3.1.0}
 
-RUN apk add --no-cache \
-        git \
-        openssh-client && \
-    apk add --no-cache --virtual .build-deps \
+RUN apk add --no-cache --virtual .build-deps \
         gcc \
         libffi-dev \
         make \
