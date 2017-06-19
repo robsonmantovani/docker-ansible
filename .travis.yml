@@ -1,0 +1,15 @@
+sudo: required
+
+language: bash
+
+services:
+  - docker
+
+script:
+  - ./build.sh
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+  - docker image push flaudisio/ansible
+
+notifications:
+  email:
+    on_success: never
