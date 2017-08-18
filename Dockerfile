@@ -7,7 +7,7 @@ RUN apk add --no-cache \
         openssh-client
 
 ARG ansible_version
-ENV ANSIBLE_VERSION ${ansible_version:-2.3.1.0}
+ENV ANSIBLE_VERSION ${ansible_version:-2.3.2.0}
 
 RUN apk add --no-cache --virtual .build-deps \
         gcc \
