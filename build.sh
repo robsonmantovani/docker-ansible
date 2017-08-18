@@ -2,7 +2,7 @@
 
 set -e
 
-DockerRepo="flaudisio/ansible"
+DockerRepo="${REPO:-flaudisio/ansible}"
 
 SupportedVersions=(
     2.2.3.0:2.2
