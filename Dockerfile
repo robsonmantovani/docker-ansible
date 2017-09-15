@@ -3,6 +3,8 @@ FROM python:2.7-alpine
 LABEL maintainer "flaudisio@gmail.com"
 
 RUN apk add --no-cache \
+        ca-certificates \
+        curl \
         git \
         openssh-client
 
