@@ -4,18 +4,21 @@ set -e
 
 KeyFile="$HOME/.ssh/id_rsa"
 
-run_cmd()
-{
-    (
-        set -x
-        "$@"
-    )
-}
+if [ -n "$1" ] ; then
+    SSH_PRIVATE_KEY="$1"
+elif [ -n "$SSH_PRIVATE_KEY" ] ; then
+    echo "Variável de ambiente SSH_PRIVATE_KEY detectada."
+else
+    echo "Fatal: nenhuma chave SSH privada definida." >&2
+    exit 1
+fi
 
-run_cmd mkdir -p -m 700 ~/.ssh
+mkdir -p -m 700 ~/.ssh
 
-echo "+ echo '<KEY>' > $KeyFile"
+echo "Instalando chave privada SSH."
 
-echo "$*" > "$KeyFile"
+echo "$SSH_PRIVATE_KEY" > "$KeyFile"
 
-run_cmd chmod 600 "$KeyFile"
+chmod 600 "$KeyFile"
+
+unset SSH_PRIVATE_KEY

@@ -4,18 +4,21 @@ set -e
 
 KeyFile="$HOME/.ssh/known_hosts"
 
-run_cmd()
-{
-    (
-        set -x
-        "$@"
-    )
-}
+if [ -n "$1" ] ; then
+    SSH_HOST_KEY="$1"
+elif [ -n "$SSH_HOST_KEY" ] ; then
+    echo "Variável de ambiente SSH_HOST_KEY detectada."
+else
+    echo "Fatal: nenhuma chave SSH de host definida." >&2
+    exit 1
+fi
 
-run_cmd mkdir -p -m 700 ~/.ssh
+mkdir -p -m 700 ~/.ssh
 
-echo "+ echo '<KEY>' >> $KeyFile"
+echo "Instalando chave SSH de host."
 
-echo "$*" >> "$KeyFile"
+echo "$SSH_HOST_KEY" >> "$KeyFile"
 
-run_cmd chmod 600 "$KeyFile"
+chmod 600 "$KeyFile"
+
+unset SSH_HOST_KEY
