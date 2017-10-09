@@ -4,12 +4,14 @@ set -e
 
 DockerRepo="${REPO:-flaudisio/ansible}"
 
+# Formato: versão[:tag-adicional]
 SupportedVersions=(
     2.2.3.0:2.2
     2.3.0.0
     2.3.1.0
     2.3.2.0:2.3
-    2.3.2.0:latest
+    2.4.0.0:2.4
+    2.4.0.0:latest
 )
 
 run_cmd()
