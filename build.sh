@@ -23,7 +23,7 @@ pull_base_image()
     run_cmd docker pull $( grep '^FROM' Dockerfile | awk '{ print $2 }' )
 }
 
-test_ansible()
+check_ansible_version()
 {
     run_cmd docker run --rm "$1" ansible --version
 }
@@ -43,11 +43,11 @@ build_images()
             --tag "$DockerRepo:$ansible_version" \
             .
 
-        test_ansible "$DockerRepo:$ansible_version"
+        check_ansible_version "$DockerRepo:$ansible_version"
 
         if [[ -n "$extra_tag" ]] ; then
             run_cmd docker tag "$DockerRepo:$ansible_version" "$DockerRepo:$extra_tag"
-            test_ansible "$DockerRepo:$extra_tag"
+            check_ansible_version "$DockerRepo:$extra_tag"
         fi
     done
 }
