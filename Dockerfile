@@ -12,7 +12,7 @@ RUN apk add --no-cache \
 ENV TZ America/Sao_Paulo
 
 ARG ansible_version
-ENV ANSIBLE_VERSION ${ansible_version:-2.4.2.0}
+ENV ANSIBLE_VERSION ${ansible_version:-2.4.3.0}
 
 RUN apk add --no-cache --virtual .build-deps \
         gcc \
