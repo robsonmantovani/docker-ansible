@@ -16,7 +16,8 @@ SupportedVersions=(
     2.4.2.0
     2.4.3.0
     2.4.4.0:2.4
-    2.4.4.0:latest
+    2.5.0:2.5
+    2.5.0:latest
 )
 
 run_cmd()
