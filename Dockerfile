@@ -22,7 +22,7 @@ RUN apk add --no-cache --virtual .build-deps \
         openssl-dev && \
     pip install --no-cache-dir \
         "ansible == $ANSIBLE_VERSION" \
-        "pywinrm >= 0.2.2, < 0.3" && \
+        "pywinrm >= 0.3.0, < 0.4" && \
     apk del --purge .build-deps
 
 COPY install-ssh-key.sh /usr/local/bin/install-ssh-key
