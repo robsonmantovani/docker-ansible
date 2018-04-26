@@ -1,0 +1,6 @@
+.dockerignore
+.git
+.travis.yml
+build.sh
+Dockerfile
+README.md
