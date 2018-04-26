@@ -7,14 +7,7 @@ DockerRepo="${REPO:-flaudisio/ansible}"
 # Formato: versão[:tag-adicional]
 SupportedVersions=(
     2.2.3.0:2.2
-    2.3.0.0
-    2.3.1.0
-    2.3.2.0
     2.3.3.0:2.3
-    2.4.0.0
-    2.4.1.0
-    2.4.2.0
-    2.4.3.0
     2.4.4.0:2.4
     2.5.0:2.5
     2.5.0:latest
