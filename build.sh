@@ -8,9 +8,10 @@ DockerRepo="${REPO:-flaudisio/ansible}"
 SupportedVersions=(
     2.2.3.0:2.2
     2.3.3.0:2.3
-    2.4.4.0:2.4
-    2.5.2:2.5
-    2.5.2:latest
+    2.4.6.0:2.4
+    2.5.9:2.5
+    2.6.6:2.6
+    2.6.6:latest
 )
 
 run_cmd()
